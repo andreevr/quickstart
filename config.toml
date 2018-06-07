@@ -1,0 +1,6 @@
+baseURL = "http://www.andreevclub.me/"
+languageCode = "en-us"
+title = "Andreev blog"
+theme = "ananke"
+
+disqusShortname = "andreevblog"

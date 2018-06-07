@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Andreev blog</title>
+    <link>http://www.andreevclub.me/posts/</link>
+    <description>Recent content in Posts on Andreev blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 May 2018 11:34:59 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.andreevclub.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Синхронизация с bucket AWS</title>
+      <link>http://www.andreevclub.me/posts/suncaws/</link>
+      <pubDate>Wed, 23 May 2018 11:34:59 +0300</pubDate>
+      
+      <guid>http://www.andreevclub.me/posts/suncaws/</guid>
+      <description>Для копирования данных из папки используется строчка:
+&amp;gt;aws s3 cp --recursive ~/quickstart/test s3://Test_bucket  Для синхронизации данных с bucket используется следующая строчка:
+&amp;gt;aws s3 sync . s3://Test_bucket/ --acl public-read  </description>
+    </item>
+    
+    <item>
+      <title>Начало</title>
+      <link>http://www.andreevclub.me/posts/myfirstpost/</link>
+      <pubDate>Fri, 18 May 2018 16:19:34 +0300</pubDate>
+      
+      <guid>http://www.andreevclub.me/posts/myfirstpost/</guid>
+      <description>Hello world! Сегодня создал сайт, используя Hugo и Amazon Web Services S3!</description>
+    </item>
+    
+  </channel>
+</rss>
