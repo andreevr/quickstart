@@ -19,7 +19,7 @@
       <guid>http://www.andreevclub.me/posts/suncaws/</guid>
       <description>Для копирования данных из папки используется строчка:
 &amp;gt;aws s3 cp --recursive ~/quickstart/test s3://Test_bucket  Для синхронизации данных с bucket используется следующая строчка:
-&amp;gt;aws s3 sync . s3://Test_bucket/ --acl public-read  </description>
+&amp;gt;aws s3 sync . s3://Test_bucket/ --acl public-read  dfgdfgdfgdf</description>
     </item>
     
     <item>
@@ -29,6 +29,15 @@
       
       <guid>http://www.andreevclub.me/posts/myfirstpost/</guid>
       <description>Hello world! Сегодня создал сайт, используя Hugo и Amazon Web Services S3!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.andreevclub.me/posts/manual/manual/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.andreevclub.me/posts/manual/manual/</guid>
+      <description>Table of Contents Подготовка Урок 1. Знакомство со светодиодом Расчет номинала резистора Ход работы Задания   Урок 2. Знакомство с кнопкой Стягивающий резистор Оператор if&amp;#8230;&amp;#8203;else Ход работы Задания   Урок 3. Знакомство с пищалкой (пьезоэлемент) Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт Ход работы Задания   Урок 5. Ультразвуковой дальномер Принцип работы Характеристики УЗ дальномера HC-SR04 Ход работы Задания   Урок 6.</description>
     </item>
     
   </channel>

@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Andreev blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.ab4b67a3ea25990fa8279f3b7ef08b61.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Table of Contents Подготовка Урок 1. Знакомство со светодиодом Расчет номинала резистора Ход работы Задания   Урок 2. Знакомство с кнопкой Стягивающий резистор Оператор if&#8230;&#8203;else Ход работы Задания   Урок 3. Знакомство с пищалкой (пьезоэлемент) Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт Ход работы Задания   Урок 5. Ультразвуковой дальномер Принцип работы Характеристики УЗ дальномера HC-SR04 Ход работы Задания   Урок 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.andreevclub.me/posts/manual/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Table of Contents Подготовка Урок 1. Знакомство со светодиодом Расчет номинала резистора Ход работы Задания   Урок 2. Знакомство с кнопкой Стягивающий резистор Оператор if&#8230;&#8203;else Ход работы Задания   Урок 3. Знакомство с пищалкой (пьезоэлемент) Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт Ход работы Задания   Урок 5. Ультразвуковой дальномер Принцип работы Характеристики УЗ дальномера HC-SR04 Ход работы Задания   Урок 6.">
+
+
+
+<meta itemprop="wordCount" content="4269">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Table of Contents Подготовка Урок 1. Знакомство со светодиодом Расчет номинала резистора Ход работы Задания   Урок 2. Знакомство с кнопкой Стягивающий резистор Оператор if&#8230;&#8203;else Ход работы Задания   Урок 3. Знакомство с пищалкой (пьезоэлемент) Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт Ход работы Задания   Урок 5. Ультразвуковой дальномер Принцип работы Характеристики УЗ дальномера HC-SR04 Ход работы Задания   Урок 6."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://www.andreevclub.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andreev blog
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  <article class="flex-l flex-wrap justify-between mw8 center">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1"></h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="0001-01-01T00:00:00Z">January 1, 0001</time>
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_Подготовка">Подготовка</a></li>
+<li><a href="#_Урок_1_Знакомство_со_светодиодом">Урок 1. Знакомство со светодиодом</a>
+<ul class="sectlevel2">
+<li><a href="#_Расчет_номинала_резистора">Расчет номинала резистора</a></li>
+<li><a href="#_Ход_работы">Ход работы</a></li>
+<li><a href="#_Задания">Задания</a></li>
+</ul>
+</li>
+<li><a href="#_Урок_2_Знакомство_с_кнопкой">Урок 2. Знакомство с кнопкой</a>
+<ul class="sectlevel2">
+<li><a href="#_Стягивающий_резистор">Стягивающий  резистор</a></li>
+<li><a href="#_Оператор_if_else">Оператор if&#8230;&#8203;else</a></li>
+<li><a href="#_Ход_работы_2">Ход работы</a></li>
+<li><a href="#_Задания_2">Задания</a></li>
+</ul>
+</li>
+<li><a href="#_Урок_3_Знакомство_с_пищалкой_пьезоэлемент">Урок 3. Знакомство с пищалкой (пьезоэлемент)</a></li>
+<li><a href="#_Урок_4_Передача_информации_с_мобильного_робота_на_компьютер_через_последовательный_порт">Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт</a>
+<ul class="sectlevel2">
+<li><a href="#_Ход_работы_3">Ход работы</a></li>
+<li><a href="#_Задания_3">Задания</a></li>
+</ul>
+</li>
+<li><a href="#_Урок_5_Ультразвуковой_дальномер">Урок 5. Ультразвуковой дальномер</a>
+<ul class="sectlevel2">
+<li><a href="#_Принцип_работы">Принцип работы</a></li>
+<li><a href="#_Характеристики_УЗ_дальномера_hc_sr04">Характеристики УЗ дальномера HC-SR04</a></li>
+<li><a href="#_Ход_работы_4">Ход работы</a></li>
+<li><a href="#_Задания_4">Задания</a></li>
+</ul>
+</li>
+<li><a href="#_Урок_6_Моторы">Урок 6. Моторы</a>
+<ul class="sectlevel2">
+<li><a href="#_Ход_работы_5">Ход работы</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_Подготовка">Подготовка</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Текущие задания выполняются на мобильном роботе МРП309, но можно использовать и другие устройства семейства Arduino.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="pictures/mrp309.jpg" alt="500" width="500">
+</div>
+<div class="title">Figure 1. Мобильный робот МРП309</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="pictures/IMG_7309.JPG" alt="500" width="500">
+</div>
+<div class="title">Figure 2. Прототипы мобильного робота</div>
+</div>
+<div class="paragraph">
+<p>Для программирования мобильного робота тебе понадобится среда разработки Arduino IDE, которую можно скачать здесь <a href="https://www.arduino.cc/en/main/software#" class="bare">https://www.arduino.cc/en/main/software#</a></p>
+</div>
+<div class="paragraph">
+<p>Запускаем Arduino IDE. Перед тобой открывается окно. В центре окна расположен <strong>скетч</strong> для написания кода (программы).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Перед использованием Arduino IDE необходимо выполнить выбор порта загрузки, платы и микроконтроллера,
+заходим в:
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>1.Инструменты &#8658; Плата. Выбираем Arduino Nano;</p>
+</div>
+<div class="paragraph">
+<p>2.Инструменты &#8658; Процессор. Выбираем ATMega328;</p>
+</div>
+<div class="paragraph">
+<p>3.Инструменты &#8658; Порт. Выбираем тот, которому соответствует наша подключенная плата, у меня это COM5.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Рассмотрим меню, которое расположено над скетчем.Когда ты напишешь свой код, необходимо убедится в том, что ты не сделал грубых ошибок. Эту проверку можно выполнить с помощью клавиши <strong>Проверить</strong>. Если проверка пройдет успешно, тогда можно смело загружать нашу программу на плату, при помощи клавиши <strong>Загрузить</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/ArduinoIDE.png" alt="500" width="500">
+</div>
+<div class="title">Figure 3. Рабочее окно Arduino IDE</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_1_Знакомство_со_светодиодом">Урок 1. Знакомство со светодиодом</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В данном уроке ты заставишь светодиод мигать.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Светодиод — это полупроводниковый прибор, трансформирующий электроток в видимое свечение.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/1.1.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 4. Внешний вид светодиода</div>
+</div>
+<div class="paragraph">
+<p>У светодиода есть два контакта: отрицательный - <strong>катод</strong> и положительный - <strong>анод</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/1.2.1.luminodeode.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 5. Обозначение светодиода на схеме</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Чтобы светодиод не сгорел, он включается в схему через резистор. Резистор подключается к положительному (аноду) контакту светодиода.
+Важно подобрать правильный номинал резистора.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/1.2.2.luminodeode.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 6. Схема включения светодиода через резистор</div>
+</div>
+<div class="sect2">
+<h3 id="_Расчет_номинала_резистора">Расчет номинала резистора</h3>
+<div class="paragraph">
+<p>Чтобы светодиод работал исправно, а не сгорел при первом подключении его к питанию,
+ необходимо правильно подобрать номинал резистора. Резистор будет забирать излишнее напряжение.</p>
+</div>
+<div class="paragraph">
+<p>Расчет номинала резистора выполняется по формуле, взятой из закона Ома.</p>
+</div>
+<div class="paragraph">
+<p>R=(V<sub>s</sub>-V<sub>l</sub>)/I</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>R - сопротивление резистора (измеряется в Омах (Ом));</p>
+</li>
+<li>
+<p>V<sub>s</sub> - напряжение источника питания (измеряется в Вольтах (В));</p>
+</li>
+<li>
+<p>V<sub>l</sub> - напряжение светодиода (В);</p>
+</li>
+<li>
+<p>I - ток светодиода (ток измеряется в Амперах (А)).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Рассмотрим пример:</p>
+</div>
+<div class="paragraph">
+<p>Напряжение источника питания 5 В. Напряжение светодиода 2 В.
+Максимальной электрический ток для светодиода 20 мА. (20 мА = 0,02 А).
+Подставив данные значения в формулу, ты получишь сопротивление, необходимое для резистора:</p>
+</div>
+<div class="paragraph">
+<p>R=(5-2)/0.02=150 Ом</p>
+</div>
+<div class="paragraph">
+<p>Получается для того, чтобы светодиод не сгорел в данной цепи нужно выбрать номинал резистора с сопротивлением не менее 150 Ом. Лучше взять больше, про запас.
+Возьмем например резистор, номиналом 220 Ом (номинал резисторов можно посмотреть в таблице номиналов).</p>
+</div>
+<div class="paragraph">
+<p>Кстати,с помощью резистора можно регулировать яркость светодиода.
+Чем больше сопротивление на резисторе, тем менее ярким будет светодиод.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи Arduino Nano на кросс-плату;</p>
+</li>
+<li>
+<p>Подключи светодиод. На кросс-плате их два (синий и красный), находятся в передней части кросс-платы. Выбери любой. Плюс светодиода подсоедини к пину D13 платы Arduino Nano, Минус светодиода подсоедини к любому  минусу контактной колодки. Как правило, контакт «плюс» соединяют красным проводом, «минус» – черным.;</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/1.2.3.luminodeode.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 7. Схема подключения светодиода к плате</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код:</p>
+<div class="literalblock">
+<div class="content">
+<pre>//Код, позволяющий мигать светодиодом
+
+void setup()
+{
+  pinMode(13, OUTPUT);         // Задаем пин 13 как выход
+}
+
+void loop()
+{
+  digitalWrite(13, HIGH);      // Включаем светодиод
+  delay(1000);                 // Ждем одну секунду
+  digitalWrite(13, LOW);       // Выключаем светодиод
+  delay(1000);                 // Ждем одну секунду
+}</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Успех! Светодиод стал мигать с периодичностью в 1 секунду.
+Изменяя значение внутри функции delay() (задержка), мы можем регулировать частоту миганий. В нашем случае установлено значение 1000 мс (миллисекунд), что соответствует 1 секунде.</p>
+</div>
+<div class="paragraph">
+<p>Давай рассмотрим нашу программу подробнее.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+В любом скетче Arduino IDE должны присутствовать две функции <strong>setup()</strong> и <strong>loop()</strong>, иначе при проверке кода вылезет ошибка.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>setup()</strong> - это функция с настройками микроконтроллера. Она выполняется единожды в начале программы при включении микроконтроллера.
+В теле этой функции указываются параметры настройки, например выбор пина, который используется на плате.</p>
+</li>
+<li>
+<p><strong>loop()</strong> - это функция выполнения. Она циклична, То есть все то, что находится в теле этой функции (внутри фигурных скобок {}) непрерывно повторяется. В этой функции описываются основные действия нашей программы.</p>
+</li>
+<li>
+<p><strong>void</strong> - Это ключевое слово, определяемое тип данных, которое возвращает функция. <strong>void</strong> означает, что функция не возвращает никаких значений.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pinMode(13, OUTPUT);         // Задаем пин 13 как выход</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pinMode()</strong> - это процедура, которая устанавливает определенный пин в соответствующий режим;</p>
+</li>
+<li>
+<p><strong>13</strong> - номер пина, к которому подключен светодиод;</p>
+</li>
+<li>
+<p><strong>OUTPUT</strong> - режим, в который мы устанавливаем наш пин. В нашем случае пин определен как выход. Это значит что информационный сигнал будет передоваться из этого пина на светодиод.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>digitalWrite(13, HIGH);      // Включаем светодиод</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>digitalWrite()</strong> - это функция, которая подает определенный уровень напряжения на <strong>цифровой</strong> пин. Либо LOW - низкий, либо HIGH - высокий;</p>
+</li>
+<li>
+<p><strong>13</strong> - номер пина, к которому подключен светодиод;</p>
+</li>
+<li>
+<p><strong>LOW</strong> - низкий уровень напряжения, который соответствует значению, 0 Вольт;</p>
+</li>
+<li>
+<p><strong>HIGH</strong> - высокий уровень напряжения, соответствует значению, 5 Вольт.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>delay(1000);                 // Ждем одну секунду</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>delay()</strong> - функция, останавливающая выполнение программы на заданное количество миллисекунд (1000 мс = 1 с).</p>
+</li>
+<li>
+<p><strong>// Включаем светодиод</strong> - это комментарий к программе. После двух символов <strong>//</strong>
+можешь писать все, что тебе захочется, сам микроконтроллер это никак не будет учитывать.
+Обычно их пишут, чтобы помнить о том, какое действие выполняет данный кусок кода.</p>
+<div class="paragraph">
+<p>Молодец, а теперь попробуй выполнить задания.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Отредактируй программу таким образом, чтобы светодиод мигал с периодичностью в :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2 секунды;</p>
+</li>
+<li>
+<p>5 секунд;</p>
+</li>
+<li>
+<p>1/2 секунды.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Отредактируй программу так, чтобы светодиод горел постоянно.</p>
+</li>
+<li>
+<p>Теперь сделай так, чтобы светодиод не горел (соответственно сама плата должна быть подключена к питанию).</p>
+</li>
+<li>
+<p>Рассчитай сопротивление резистора, для цепи с напряжением питания, равным 9 В,
+Напряжение светодиода 2 В, с максимально допустимым током 25 мА.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_2_Знакомство_с_кнопкой">Урок 2. Знакомство с кнопкой</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В данном уроке ты научишься использовать кнопку для управления светодиодом.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Кнопка - это простой механизм, замыкающий цепь. Пока кнопка нажата - цепь замкнута, кнопка опущена - цепь разомкнута.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.1.button.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 8. Внешний вид тактовой кнопки</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.1.button.jpg" alt="350" width="350">
+</div>
+<div class="title">Figure 9. Обозначение кнопки на схеме (слева с одной парой контактов, справа с двумя парами контактов)</div>
+</div>
+<div class="paragraph">
+<p>Рассмотрим схему, представленную ниже:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.2.button.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 10. Схема подключения кнопки через стягивающий резистор</div>
+</div>
+<div class="paragraph">
+<p>В этой схеме сигнал идет с источника питания через кнопку и попадает в плату Arduino Nano черезе пин D12,
+в дальнейшем микроконтроллер обрабатывает этот сигнал и посылает сигнал на пин D13,
+к которому подключен светодиод. Резистор в схеме играет роль <strong>стягивающего</strong>, который забирает излишки тока в землю.
+На нашей кросс-плате к кнопке уже подключен данный резистор. Его номинал составляет 10 кОм.</p>
+</div>
+<div class="paragraph">
+<p>Реализуем данную схему в ходе работы.</p>
+</div>
+<div class="sect2">
+<h3 id="_Стягивающий_резистор">Стягивающий  резистор</h3>
+<div class="paragraph">
+<p>Используются в схемах, рядом с контактами логических компонентов, где важно только 2 факта:
+есть на контакте питание или нет. Например контакты Arduino.
+Задача этих резисторов - не оставить контакт компонента в "подвешенном" состоянии.</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим схему без стягивающего резистора</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.3.buttonNotRezistor.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 11. Схема подключения светодиода через кнопку</div>
+</div>
+<div class="paragraph">
+<p>Мы хотим, чтобы когда кнопка была не нажата, светодиод не горел (цифровой вход фиксировал отсутствие сигнала).
+Но в данном случае наш вход то срабатывает, то не срабатывает в хаотическом состоянии (Светодиод может тускло гореть).
+Причина этого — шумы. Которые возникают из различных воздействий окружающей среды. Провода действуют как антенны и производят электричество из электромагнитных волн среды.
+Чтобы гарантировать отсутствие напряжения при разомкнутой цепи, рядом со светодиодом (либо любым другим цифровым входом платы) ставится стягивающий резистор:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.4.buttonRezistor.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 12. Схема подключения светодиода через кнопку с использованием стягивающего резистора</div>
+</div>
+<div class="paragraph">
+<p>Теперь нам не будут мешать шумы. При нажатии на кнопку светодиод будет гореть, а при не нажатии гарантированно погаснет.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Как правило сопротивление стягивающего резистора не менее 10 кОм.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Оператор_if_else">Оператор if&#8230;&#8203;else</h3>
+<div class="paragraph">
+<p>Конструкция <strong>if&#8230;&#8203;else</strong> позволяет в программе выполнять проверку условия
+и задавать варианты дальнейшего ее решения.</p>
+</div>
+<div class="paragraph">
+<p>Синтаксис этой конструкции таков:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if (условие)       // Проверяется указанное условие
+{
+  // Действие A
+}
+else                           // Иначе
+{
+  // Действие B</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Если <strong>условие</strong> будет верным, то программы перейдет к <strong>Действию A</strong>, а <strong>Действие B</strong> проигнорирует.</p>
+</div>
+<div class="paragraph">
+<p>Если условие - <strong>неверное</strong>, то программа будет выполнять <strong>Действие B</strong>, а <strong>Действие A</strong> - игнорировать.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы_2">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи Arduino Nano на кросс-плату;</p>
+</li>
+<li>
+<p>Подключи кнопку и светодиод, как показано на рисунке.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.3.buttonLuminodeode.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 13. Схема подключения кнопки и светодиода к плате</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Код для включения светодиода с помощью кнопки
+
+int buttonPin = 12;           // Назначаем пин с кнопкой
+int ledPin = 13;              // Назначаем пин со светодиодом
+boolean buttonState = LOW;    // Состояние кнопки отжата
+
+void setup()
+{
+  pinMode(buttonPin, INPUT); // Задаем пин с кнопкой как вход,
+  pinMode(ledPin, OUTPUT);   // а пин со светодиодом - как выход
+}
+
+void loop()
+{
+  // Считываем значение кнопки
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH)       // Если кнопка нажата
+  {
+    digitalWrite(ledPin, HIGH);  // Включаем светодиод
+  }
+  else                           // Иначе
+  {
+    digitalWrite(ledPin, LOW);   // Выключаем светодиод
+  }
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Теперь нажми и удерживай кнопку. Если ты все делал по указаниям, то при нажатии на кнопку светодиод должен загораться, а при отпускании кнопки - гаснуть.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Когда ты нажимаешь на кнопку, ты замыкаешь цепь и электрический ток поступает на пин D12, в дальнейшем наша программа обрабатывает этот сигнал и подает высокий уровень напряжения на пин D13, к которому подключен светодиод.</p>
+</div>
+<div class="paragraph">
+<p>Давай рассмотрим нашу программу подробнее.</p>
+</div>
+<div class="paragraph">
+<p>Часть функций ты видел в <a href="#_Урок_1_Знакомство_со_светодиодом">уроке 1</a></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>int buttonPin = 12;           // Назначаем пин с кнопкой</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Данной строчкой мы создаем глобальную переменную с именем <strong>buttonPin</strong>, типа <strong>int</strong> (integer - целый тип данных) и присваиваем ей значение <strong>12</strong>.
+Имя переменной может быть любым, но понятным для тебя. Значение должно соответствовать пину, который ты выбрал, а тип переменной мы выбрали целый по причине того, что пины на плате обозначаются целыми числами (12, 13, 14 и тп.), а не дробными (0,5, 0,8 и тп.).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+В программе каждая переменная имеет имя, тип данных и значение.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<strong>Глобальные переменные</strong> - это переменные, которые доступны всей программе, включая подпрограммы (пользовательские функции). <strong>Локальные переменные</strong> - переменные, определенные внутри подпрограммы (пользовательской функции). Они доступны только внутри функции, в которой они определены.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>boolean buttonState = LOW;    // Состояние кнопки отжата</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Переменная <strong>buttonState</strong> необходима нам для того, чтобы отследить состояние нашей кнопки. У нее может быть 2 состояния: нажата и отжата.
+Поэтому мы создаем переменную типа <strong>boolean</strong> c начальным значением <strong>LOW</strong> (в ходе программы это значение будет изменяться).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>boolean</strong> - тип данных, принимающий всего два возможных значения (true (истина) или false (ложь); 1 или 0; LOW (низкий уровень напряжения) или HIGH (высокий уровень напряжения))</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pinMode(buttonPin, INPUT); // Задаем пин с кнопкой как вход</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pinMode()</strong> - это процедура, которая устанавливает определенный пин в соответствующий режим;</p>
+</li>
+<li>
+<p><strong>buttonPin</strong> - имя пина, к которому подключен светодиод. В <a href="#_Урок_1_Знакомство_со_светодиодом">уроке 1</a> мы не задавали имя пину, а писали просто номер пина. Правильнее задавать имя для всех переменных;</p>
+</li>
+<li>
+<p><strong>INPUT</strong> - режим, в который мы устанавливаем наш пин. В нашем случае пин определен как <strong>вход</strong>. Это значит что информационный сигнал будет передаваться из вне на этот пин;</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>buttonState = digitalRead(buttonPin);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>С помощью функции <strong>digitalRead()</strong>, программа считывает значение с переменной <strong>buttonPin</strong> и присваивает его нашей переменной <strong>buttonState</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>digitalRead()</strong> - функция, считывающая значение с указанного пина. Возвращает либо LOW, либо HIGH;</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if (buttonState == HIGH)       // Если кнопка нажата
+{
+  digitalWrite(ledPin, HIGH);  // Включаем светодиод
+}
+else                           // Иначе
+{
+  digitalWrite(ledPin, LOW);   // Выключаем светодиод
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В данном месте программы мы проверяем состояние кнопки: нажата или нет. Используем при этом конструкцию <strong>if, else</strong></p>
+</div>
+<div class="paragraph">
+<p>Молодец, теперь ты знаешь как с помощью кнопки замыкать и размыкать электрическую цепь.
+Вместо светодиода могут быть подсоединены и другие устройства, например пищалка (пьезоэлемент).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания_2">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Поправь программу так, чтобы при опущенной кнопке светодиод горел, а при нажатой нет.</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы при опущенной кнопке светодиод горел, а при нажатой мигал с периодичностью в 1 секунду.
+(Смотри <a href="#_Урок_1_Знакомство_со_светодиодом">урок 1</a>).</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы при нажатии на кнопку светодиод мигал, а при
+отпущенной кнопке нет.</p>
+</li>
+<li>
+<p>Подсоедини в схему вместо светодиода пищалку (пьезоэлемент).
+Что произошло?</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_3_Знакомство_с_пищалкой_пьезоэлемент">Урок 3. Знакомство с пищалкой (пьезоэлемент)</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Пьезоэлемент - это
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_4_Передача_информации_с_мобильного_робота_на_компьютер_через_последовательный_порт">Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В ходе данной работы ты научишься передавать сигналы с компьютера на робота и
+наоборот через проводной последовательный порт.</p>
+</div>
+<div class="paragraph">
+<p>Это может потребоваться при управлении роботом с помощью клавиатуры, мыши или смартфона.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<strong>Последовательный порт (COM-порт, Serial Port</strong>)
+ – это стандартный двунаправленный последовательный порт компьютера,
+ используется для передачи данных согласно <strong>протоколу RS-232</strong> и не только.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<strong>Протокол передачи данных</strong> — стандарт, описывающий правила взаимодействия
+функциональных блоков при передаче данных.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>То есть протокол - набор правил, по которым будут общаться устройства.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>RS-232 (Recommended Standard 232)</strong> – это протокол
+последовательной передачи данных между двумя устройствами
+(информация передается пакетами по одному байту). Согласно данному протоколу,
+информация передается у виде двоичного кода: логическому нулю соответствует
+значение напряжение со знаком “+”, а логической единице соответствует
+значение напряжения со знаком “–“.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы_3">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи Arduino Nano на кросс-плату.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.1.comPrintln.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 14. Установка Nano в кросс-плату</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код.
+Поскольку общение будет происходить через порт, важно <strong>не отсоединять</strong> провод от платы.</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Общение с компьютером через последовательный порт
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+
+  // Отправляем по последовательному порту
+  // сообщение "Hello"
+  Serial.println("Hello");
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    byte b = Serial.read();
+    // Отправлем ответную информацию на компьютер
+    Serial.write(b);
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Описание функций программного кода:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Про функции <strong>setup()</strong> и <strong>loop()</strong> ты знаешь из <a href="#_Урок_1_Знакомство_со_светодиодом">урока 1</a>;</p>
+</li>
+<li>
+<p>Оператор <strong>if</strong> тебе известен из <a href="#_Урок_2_Знакомство_с_кнопкой">урока 2</a>;</p>
+</li>
+<li>
+<p><strong>Serial</strong> -это встроенный объект, экземпляр класса. Предназначен для работы с последовательным портом, который содержит методы
+<strong>write</strong>, <strong>read</strong>, <strong>begin</strong>, <strong>println</strong> и др;</p>
+</li>
+<li>
+<p><strong>begin()</strong> - это метод, который открывает порт для передачи данных. В этот метод передается скорость передачи, на которой будет происходить общение, в бодах (бит/секунду).
+В нашем коде скорость передачи равна 9600 бод.</p>
+</li>
+<li>
+<p><strong>available()</strong> -  метод, возвращающий целое число байт, которое микроконтроллер еще не прочитал;
+Если это значение равно нулю, то это значит, что никаких данных через последовательный порт не приходило;</p>
+</li>
+<li>
+<p><strong>read()</strong> - метод, который считывает пришедшую информацию с компьютера (пришедший байт);</p>
+</li>
+<li>
+<p><strong>print()</strong> - метод, позволяющий печатать через последовательный порт текстовую информацию, переданную в качестве аргумента.
+Также есть функция <strong>println()</strong>, которая добавляет после нашего текста символ переноса на новую строчку.
+Таким образом каждая новая информация в мониторе порта будет располагаться с новой строчки (столбиком), а у метода <strong>print()</strong> вся информация будет располагаться в строчку.</p>
+</li>
+<li>
+<p><strong>write()</strong> - метод, передает информационный байт в монитор порта. То есть  <strong>print()</strong> печатает строчку значения аргумента, а <strong>write()</strong> передает значение этого аргумента.</p>
+</li>
+<li>
+<p><strong>byte b</strong> - переменная с именем b и типом данных <strong>byte</strong>. Byte - тип данных данных, содержащий 8-ми битное беззнаковое целое число, в диапазоне 0..255.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Открой Arduino IDE и зайди в:</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Сервис &#8658; Монитор порта</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Перед тобой откроется диалоговое окно для передачи символов через последовательный порт.
+Робот будет приветствовать тебя фразой 'Hello', что в переводе с Английского значит 'Привет'.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.1.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 15. Монитор порта. Приветствие</div>
+</div>
+</li>
+<li>
+<p>Поставь курсор мыши в поле ввода, напиши любой текст и нажми <strong>отправить</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.2.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 16. Монитор порта. Ввод текста</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.3.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 17. Монитор порта. Вывод введенного текста</div>
+</div>
+<div class="paragraph">
+<p>После того, как ты нажал отправить, текст через последовательный порт
+передался на контроллер, контроллер его обработал и отправил в монитор порта абсолютно такой же текст.
+Таким вот простым образом можно производить передачу данных с компьютера на контроллер и наоборот.</p>
+</div>
+</li>
+<li>
+<p>Теперь создадим диалог между тобой и контроллером робота.
+Смысл диалога состоит в том, что ты будешь писать роботу вопросы, а он будет тебе на них отвечать.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+В данном задании важно задавать вопросы в точности также, как мы их опишем в программе, учитывая все знаки препинания
+и заглавные буквы!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Вопросы можешь придумать свои, а можешь использовать те, что мы приготовили:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Привет!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Привет!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Как тебя зовут?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Меня зовут Робас.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сколько тебе лет?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 года.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Расскажи законы робототехники</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Существует три основных закона робототехники. Их автор Айзек Азимов.
+</p><p class="tableblock">              1.Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.
+</p><p class="tableblock">              2.Робот должен повиноваться всем приказам, которые дает человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.
+</p><p class="tableblock">              3.Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="literalblock">
+<div class="content">
+<pre>// Диалог через последовательный порт
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    byte b = Serial.read();
+    if (b == "Привет!")
+    {
+        Serial.println("Привет");
+    }
+    if (b == "Как тебя зовут?")
+    {
+        Serial.println("Меня зовут Робас");
+    }
+    if (b == "Сколько тебе лет?")
+    {
+        Serial.println("3 года");
+    }
+    if (b == "Расскажи законы робототехники")
+    {
+        Serial.println("Существует три основных закона робототехники. Их автор Айзек Азимов.");
+        Serial.println("1.Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.");
+        Serial.println("2.Робот должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.");
+        Serial.println("3.Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.");
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Теперь, с помощью монитор порта задавай вопросы роботу, а он тебе на них будет отвечать!</p>
+</div>
+</li>
+<li>
+<p>С помощью команд, посылаемых с компьютера через последовательный порт
+можно управлять датчиками и сенсорами, подключенными к контроллеру. Попробуй
+управлять светодиодом и пьезопищалкой, используя клавиатуру компьютера:</p>
+<div class="paragraph">
+<p>Собери схему, которая представлена на картинке:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.3.onOff.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 18. Схема подключения светодиодов-мигалок и пьезопищалки</div>
+</div>
+<div class="paragraph">
+<p>В этой схеме мы подключаем к контроллеру 2 светодиода, из которых мы в последствии сделаем мигалку
+Плюс синего светодиода подключаем к пину <strong>D2</strong> контроллера, плюс красного светодиода подключаем к пину <strong>D3</strong> контроллера,
+Плюс пьезопищалки подключим к пину <strong>D13</strong>.
+Минусы элементов подключим к дополнительной минусовой колодке.</p>
+</div>
+<div class="paragraph">
+<p>Загрузи код:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Управление через последовательный порт
+
+int blueLed = 2;                   // Пин с синим светодиодом
+int redLed = 3;                    // Пин с красным светодиодом
+int piezo = 13;                    // Пин с пищалкой
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+  Serial.println("Press comand..."); // Выводим фразу "Введите команду" при открытии монитор порта
+
+  pinMode(blueLed, OUTPUT);        // Задаем пин как выход
+  pinMode(redLed, OUTPUT);         // Задаем пин как выход
+  pinMode(piezo, OUTPUT);          // Задаем пин как выход
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    char b = Serial.read();         // Если пришел символ 'r'
+    if (b == 'r')
+    {
+        digitalWrite(redLed, HIGH); // Включаем красный светодиод
+        Serial.println("Red on");   // Выводим текст в монитор порта. "Красный включен"
+    }
+     if (b == 'b')                  // Если пришел символ 'b'
+    {
+        digitalWrite(blueLed, HIGH);// Включаем синий светодиод
+        Serial.println("Blue on");  // Выводим текст в монитор порта. "Синий включен"
+    }
+    if (b == 'p')                   // Если пришел символ 'p'
+    {
+        digitalWrite(piezo, HIGH);  // Включаем пищалку
+        Serial.println("Piezo on"); // Выводим текст в монитор порта. "Пищалка включена"
+    }
+    if (b == '0')                   // Если пришел символ '0'
+    {
+        digitalWrite(blueLed, LOW); // Выключаем синий светодиод
+        digitalWrite(redLed, LOW);  // Выключаем красный светодиод
+        digitalWrite(piezo, LOW);   // Выключаем пищалку
+        Serial.println("All off");  // Выводим текст в монитор порта: "Все выключено"
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Программа работает так, что при нажатии на определенные символы на клавиатуре,
+ты можешь управлять статусом светодиодов и пищалки. Таблица символов представлена ниже.
+Можешь выбрать и свои символы, не забудь только поправить код.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Символ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Действие</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'r'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red on - включение красного светодиода</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'b'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blue on - включение синего светодиода</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'p'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Piezo on - включение пищалки</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'0'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All off - выключить все</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Молодец, ты узнал что такое последовательный порт и научился, с его помощью, управлять контроллером.
+А теперь попробуй выполнить задания.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания_3">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Поменяй символы управления светодиодами и пищалкой по своему усмотрению.</p>
+</li>
+<li>
+<p>Поправь последнюю программу так, чтобы при отправки одного символа с клавиатуры оба светодиода и пищалка
+включались одновременно, а при другом символе все отключалось.</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы каждый светодиод и пищалка отключались
+при нажатии на разные кнопки, а не одновременно.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_5_Ультразвуковой_дальномер">Урок 5. Ультразвуковой дальномер</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В данном уроке ты узнаешь что такое ультразвуковой дальномер, как он устроен и,
+с его помощью, сможешь определять расстояния до объекта. В нашем роботе
+используется дальномер HC-SR04.
+С этим устройством можно запрограммировать мобильного робота, чтобы он объезжал препятствия, или
+рассчитывал расстояние до предметов, или двигался в сторону/от стены.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ультразвуковой дальномер - это устройство для бесконтактного
+измерения расстояния
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.1.1.hcsr04.jpg" alt="350" width="350">
+</div>
+<div class="title">Figure 19. Ультразвуковой дальномер HC-SR04</div>
+</div>
+<div class="sect2">
+<h3 id="_Принцип_работы">Принцип работы</h3>
+<div class="paragraph">
+<p>Ультразвуковой дальномер посылает через передатчик импульсный сигнал определенной частоты (в нашем случае 40 кГц)
+и слушает эхо через приемник. Отправленный сигнал встречается с объектом, отражается от него и попадает обратно в дальномер.
+Дальномер измеряет время путешествия сигнала.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.2.URFanimation.gif" alt="350" width="350">
+</div>
+<div class="title">Figure 20. Принцип работы УЗ дальномера</div>
+</div>
+<div class="paragraph">
+<p>По времени распространения звуковой волны можно оценить расстояние до объекта, используя формулу:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>s = (t<sub>и</sub> × с) / 2</p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s - расстояние до объекта;</p>
+</li>
+<li>
+<p>t<sub>и</sub> - время отправленного сигнала;</p>
+</li>
+<li>
+<p>с - скорость звука (343 м/с).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Почему мы наше выражение делим пополам? Все дело в том, что сигнал проходит 2 расстояния:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>От передатчика до препятствия;</p>
+</li>
+<li>
+<p>От препятствия до приемника.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Эти расстояния одинаковые (дальномер то у нас один).
+Чтобы узнать точное расстояние до объекта необходимо общий путь следования сигнала поделить пополам.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Скорость звука равна 343 м/с или 1234,8 км/ч.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Характеристики_УЗ_дальномера_hc_sr04">Характеристики УЗ дальномера HC-SR04</h3>
+<div class="paragraph">
+<p>Данное устройство имеет 4 контактных ножки:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vcc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Питание (+)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Цифровой вход</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Echo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Цифровой выход</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gnd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Земля (-)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Подаем логическую единицу (высокий уровень напряжения) на цифровой вход <strong>Trig</strong>.
+После завершения измерения, на цифровой выход <strong>Echo</strong> будет подана логическая единица на время, пропорциональное расстоянию до объекта.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Напряжение питания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 В</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Потребляемый ток при работе</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 мА</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Рабочая частота сигнала</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 кГц</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Рабочий диапазон</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 - 400 см</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Угол измерения</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15°</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Габариты</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45х20х15 мм</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы_4">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи контроллер и ультразвуковой дальномер на кросс-плату.</p>
+</li>
+<li>
+<p>Подключи ультразвуковой дальномер к контроллеру по рисунку.
+Поскольку "плюс" (<strong>Vcc</strong>) и "минус" (<strong>Gnd</strong>) уже разведены в дорожках кросс-платы, тебе остается
+подключить 2 контакта: Цифровой выход <strong>Echo</strong> подключи к пину <strong>A1</strong> контроллера, а цифровой вход <strong>Trig</strong> - к пину <strong>A0</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.3.URFinger.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 21. Схема подключения УЗ дальномера</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код. Поскольку общение будет происходить через порт, важно не отсоединять провод от платы.
+Данный код позволит контроллеру определять расстояние между дальномером и объектом:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Ультразвуковой дальномер и расстояние до препятствия через последовательный порт
+
+int echoPin = A1;                    // Назначаем пин A1. Сигнал с выхода дальномера
+int trigPin = A0;                    // Назначаем пин A0. Сигнал с входа дальномера
+
+void setup()
+{
+  // Определяем СОМ-порт
+  // Задаем ему скорость 9600 бод
+  Serial.begin(9600);
+  pinMode(echoPin, INPUT);           // Задаем пин как вход
+  pinMode(trigPin, OUTPUT);          // Задаем пин как выход
+}
+
+void loop()
+{
+  int t;                            // Время прохождения сигнала от приемника до передатчика
+  int s;                            // Дальность до препятствия
+
+  digitalWrite(trigPin, HIGH);       // Подаем сигнал на дальномер
+  delayMicroseconds(10);             // Удерживаем 10 микросекунд
+  digitalWrite(trigPin, LOW);        // Отмена подачи сигнала на дальномер
+  t = pulseIn(echoPin, HIGH);        // Замеряем длину импульса
+  s = t / 58;                        // Находим расстояние до препятствия по формуле s = c*t в см
+
+  Serial.print(s);                  // Отправляем на компьютер значение
+  Serial.println(" cm");             // Печатаем единицы измерения в см
+  delay(100);
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Данный программный код будет работать так:
+С контроллера, через пин <strong>A1</strong> мы подаем сигнал длительностью 10 мкс на вход УЗ дальномера <strong>Trig</strong>.
+С помощью встроенной функции <strong>pulseIn()</strong>, считываем продолжительность следования сигнала,
+используя выход <strong>Echo</strong> УЗ дальномера, который подключен к пину <strong>А0</strong> контроллера.
+После этого находим расстояние до препятствия с помощью формулы <strong>s = t / 58</strong>
+и печатаем полученное значение и единицы измерения в монитор порта через последовательный порт.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Формула <strong>s = t / 58</strong> получилась из формулы <strong>s = (t<sub>и</sub> × с) / 2</strong>
+при переводе скорости звука из метров/секунду в сантиметры/микросекунду.</p>
+</div>
+<div class="paragraph">
+<p>Скорость звука c = 343 м/с = 0,0343 см/мкс ≈ 1/29 см/мкс.</p>
+</div>
+<div class="paragraph">
+<p>Получаем:</p>
+</div>
+<div class="paragraph">
+<p>s = (t * c) / 2;</p>
+</div>
+<div class="paragraph">
+<p>s = (t * (1/29)) / 2;</p>
+</div>
+<div class="paragraph">
+<p>s = t * 1 / 58;</p>
+</div>
+<div class="paragraph">
+<p>s = t / 58 - формула для нахождения расстояния до объекта в сантиметрах.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Описание функций программного кода:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Про функции <strong>setup()</strong> и <strong>loop()</strong> ты знаешь из <a href="#_Урок_1_Знакомство_со_светодиодом">урока 1</a>;</p>
+</li>
+<li>
+<p><strong>Serial</strong> -это встроенный объект, экземпляр класса. Предназначен для работы с последовательным портом, который содержит методы
+<strong>write</strong>, <strong>read</strong>, <strong>begin</strong>, <strong>println</strong>, смотри <a href="#_Урок_4_Передача_информации_с_мобильного_робота_на_компьютер_через_последовательный_порт">урок 4</a>;</p>
+</li>
+<li>
+<p><strong>digitalWrite()</strong> - это функция, которая подает определенный уровень напряжения на цифровой пин. Либо LOW - низкий, либо HIGH - высокий.
+(В нашем случае используются <strong>аналоговые</strong> пины <strong>A1</strong> и <strong>A0</strong>. Аналоговые пины могут выполнять роль цифровых пинов);</p>
+</li>
+<li>
+<p><strong>delayMicroseconds()</strong> - Приостанавливает программу на время (в микросекундах), указанное в качестве параметра.
+Для задержек, превышающих несколько тысяч микросекунд, используй <strong>delay()</strong>;</p>
+</li>
+<li>
+<p><strong>pulseIn(echoPin, HIGH)</strong> - Считывает длительность сигнала на заданном порту (HIGH или LOW).
+Например, если задано считывание HIGH функцией pulseIn(),
+функция ожидает пока на заданном порту не появиться HIGH.
+Когда HIGH получен, включается таймер, который будет остановлен когда на порту вход/выхода будет LOW.
+Функция pulseIn() возвращает длину сигнала в микросекундах. Функция возвращает 0, если в течение заданного времени (таймаута) не был зафиксирован сигнал на порту.
+Возможны некоторые погрешности в измерение длинных сигналов. Функция может измерять сигналы длиной от 10 микросекунд до 3 минут.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Аналоговый пин контроллера может играть роль цифрового.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Цифровой пин контроллера <strong>не</strong> сможет заменить аналогового.
+<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Открой Arduino IDE и зайди в:</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Сервис &#8658; Монитор порта</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Контроллер через последовательный порт будет выдавать тебе расстояние до объекта в сантиметрах.
+В моем случае расстояние до объекта равнялось 7 см.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.4.2.URFCOM.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 22. Монитор порта выдает расстояние до объекта</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.4.1.URFrobot.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 23. Робот и возникшее перед ним препятствие</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>В этом уроке ты узнал, что такое ультразвуковой дальномер и как он работает.
+Теперь ты можешь применить данное устройство в других задачах.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания_4">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Создай программу, которая будет включать светодиод при следующем условии:
+если расстояние до объекта меньше 10 см, включить светодиод, иначе выключить.</p>
+</li>
+<li>
+<p>Реализуй парктроник с помощью дальномера и пищалки.
+При приближении к препятствию пищалка должна пищать чаще, при отдалении - реже, а
+при большом расстоянии - не подавать никаких сигналов. Не забудь подключить пищалку,
+в этом тебе поможет Урок 3.
+(Парктроник - это устройство, которое сигнализирует о приближении к препятствию.
+Устанавливается на автомобили для удобства парковки).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_Урок_6_Моторы">Урок 6. Моторы</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В этом уроке ты узнаешь как устроены моторы, которые используются в роботе,
+Научишься их подключать и узнаешь как можно уменьшить количество занимаемых пинов контроллера, используя логические элементы.</p>
+</div>
+<div class="paragraph">
+<p>Мотор с редуктором, который установлен на роботе представлен на фото.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/6.1.motor.jpeg" alt="350" width="350">
+</div>
+<div class="title">Figure 24. Коллекторный мотор мобильного робота</div>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы_5">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи на кросс-плату следующие элементы: контроллер, драйвер моторов,
+логическую схему и схему питания (смотри рисунок ниже);</p>
+</li>
+<li>
+<p>Соедини контроллер, драйвер моторов и логику проводами, как на рисунке.</p>
+</li>
+<li>
+<p>Закрепи кросс-плату с помощью двух винтиков</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/6.3.motorOn.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 25. Схема подключения моторов</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andreevblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://www.andreevclub.me/" >
+    &copy; 2018 Andreev blog
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
