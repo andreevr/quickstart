@@ -13,3 +13,4 @@ date: 2018-05-23T11:34:59+03:00
 >aws s3 sync . s3://Test_bucket/ --acl public-read
 ```
 
+dfgdfgdfgdf
