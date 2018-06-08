@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.andreevclub.me/posts/manual/lesson1/</loc>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andreevclub.me/posts/manual/lesson2/</loc>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andreevclub.me/posts/manual/lesson4/</loc>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andreevclub.me/posts/manual/lesson5/</loc>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.andreevclub.me/posts/manual/lesson6/</loc>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.andreevclub.me/posts/suncaws/</loc>
     <lastmod>2018-05-23T11:34:59+03:00</lastmod>
   </url>
@@ -13,12 +38,8 @@
   </url>
   
   <url>
-    <loc>http://www.andreevclub.me/posts/manual/manual/</loc>
-  </url>
-  
-  <url>
     <loc>http://www.andreevclub.me/</loc>
-    <lastmod>2018-05-23T11:34:59+03:00</lastmod>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -29,7 +50,7 @@
   
   <url>
     <loc>http://www.andreevclub.me/posts/</loc>
-    <lastmod>2018-05-23T11:34:59+03:00</lastmod>
+    <lastmod>2018-06-08T11:34:59+03:00</lastmod>
     <priority>0</priority>
   </url>
   

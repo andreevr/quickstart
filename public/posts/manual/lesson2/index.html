@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Andreev blog  | Урок 2. Знакомство с кнопкой</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.ab4b67a3ea25990fa8279f3b7ef08b61.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Урок 2. Знакомство с кнопкой" />
+<meta property="og:description" content="В данном уроке ты научишься использовать кнопку для управления светодиодом.
+   Tip  Кнопка - это простой механизм, замыкающий цепь. Пока кнопка нажата - цепь замкнута, кнопка опущена - цепь разомкнута.      Figure 1. Внешний вид тактовой кнопки   Figure 2. Обозначение кнопки на схеме (слева с одной парой контактов, справа с двумя парами контактов)  Рассмотрим схему, представленную ниже:
+  Figure 3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.andreevclub.me/posts/manual/lesson2/" />
+
+
+
+<meta property="article:published_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+<meta property="article:modified_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Урок 2. Знакомство с кнопкой">
+<meta itemprop="description" content="В данном уроке ты научишься использовать кнопку для управления светодиодом.
+   Tip  Кнопка - это простой механизм, замыкающий цепь. Пока кнопка нажата - цепь замкнута, кнопка опущена - цепь разомкнута.      Figure 1. Внешний вид тактовой кнопки   Figure 2. Обозначение кнопки на схеме (слева с одной парой контактов, справа с двумя парами контактов)  Рассмотрим схему, представленную ниже:
+  Figure 3.">
+
+
+<meta itemprop="datePublished" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="dateModified" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="wordCount" content="979">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Урок 2. Знакомство с кнопкой"/>
+<meta name="twitter:description" content="В данном уроке ты научишься использовать кнопку для управления светодиодом.
+   Tip  Кнопка - это простой механизм, замыкающий цепь. Пока кнопка нажата - цепь замкнута, кнопка опущена - цепь разомкнута.      Figure 1. Внешний вид тактовой кнопки   Figure 2. Обозначение кнопки на схеме (слева с одной парой контактов, справа с двумя парами контактов)  Рассмотрим схему, представленную ниже:
+  Figure 3."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://www.andreevclub.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andreev blog
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  <article class="flex-l flex-wrap justify-between mw8 center">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Урок 2. Знакомство с кнопкой</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-06-08T11:34:59&#43;03:00">June 8, 2018</time>
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>В данном уроке ты научишься использовать кнопку для управления светодиодом.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Кнопка - это простой механизм, замыкающий цепь. Пока кнопка нажата - цепь замкнута, кнопка опущена - цепь разомкнута.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.1.button.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 1. Внешний вид тактовой кнопки</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.1.button.jpg" alt="350" width="350">
+</div>
+<div class="title">Figure 2. Обозначение кнопки на схеме (слева с одной парой контактов, справа с двумя парами контактов)</div>
+</div>
+<div class="paragraph">
+<p>Рассмотрим схему, представленную ниже:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.2.button.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 3. Схема подключения кнопки через стягивающий резистор</div>
+</div>
+<div class="paragraph">
+<p>В этой схеме сигнал идет с источника питания через кнопку и попадает в плату Arduino Nano черезе пин D12,
+в дальнейшем микроконтроллер обрабатывает этот сигнал и посылает сигнал на пин D13,
+к которому подключен светодиод. Резистор в схеме играет роль <strong>стягивающего</strong>, который забирает излишки тока в землю.
+На нашей кросс-плате к кнопке уже подключен данный резистор. Его номинал составляет 10 кОм.</p>
+</div>
+<div class="paragraph">
+<p>Реализуем данную схему в ходе работы.</p>
+</div>
+<div class="sect2">
+<h3 id="_Стягивающий_резистор">Стягивающий  резистор</h3>
+<div class="paragraph">
+<p>Используются в схемах, рядом с контактами логических компонентов, где важно только 2 факта:
+есть на контакте питание или нет. Например контакты Arduino.
+Задача этих резисторов - не оставить контакт компонента в "подвешенном" состоянии.</p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим схему без стягивающего резистора</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.3.buttonNotRezistor.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 4. Схема подключения светодиода через кнопку</div>
+</div>
+<div class="paragraph">
+<p>Мы хотим, чтобы когда кнопка была не нажата, светодиод не горел (цифровой вход фиксировал отсутствие сигнала).
+Но в данном случае наш вход то срабатывает, то не срабатывает в хаотическом состоянии (Светодиод может тускло гореть).
+Причина этого — шумы. Которые возникают из различных воздействий окружающей среды. Провода действуют как антенны и производят электричество из электромагнитных волн среды.
+Чтобы гарантировать отсутствие напряжения при разомкнутой цепи, рядом со светодиодом (либо любым другим цифровым входом платы) ставится стягивающий резистор:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.2.4.buttonRezistor.jpg" alt="300" width="300">
+</div>
+<div class="title">Figure 5. Схема подключения светодиода через кнопку с использованием стягивающего резистора</div>
+</div>
+<div class="paragraph">
+<p>Теперь нам не будут мешать шумы. При нажатии на кнопку светодиод будет гореть, а при не нажатии гарантированно погаснет.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Как правило сопротивление стягивающего резистора не менее 10 кОм.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Оператор_if_else">Оператор if&#8230;&#8203;else</h3>
+<div class="paragraph">
+<p>Конструкция <strong>if&#8230;&#8203;else</strong> позволяет в программе выполнять проверку условия
+и задавать варианты дальнейшего ее решения.</p>
+</div>
+<div class="paragraph">
+<p>Синтаксис этой конструкции таков:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if (условие)       // Проверяется указанное условие
+{
+  // Действие A
+}
+else                           // Иначе
+{
+  // Действие B</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Если <strong>условие</strong> будет верным, то программы перейдет к <strong>Действию A</strong>, а <strong>Действие B</strong> проигнорирует.</p>
+</div>
+<div class="paragraph">
+<p>Если условие - <strong>неверное</strong>, то программа будет выполнять <strong>Действие B</strong>, а <strong>Действие A</strong> - игнорировать.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи Arduino Nano на кросс-плату;</p>
+</li>
+<li>
+<p>Подключи кнопку и светодиод, как показано на рисунке.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/2.3.buttonLuminodeode.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 6. Схема подключения кнопки и светодиода к плате</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Код для включения светодиода с помощью кнопки
+
+int buttonPin = 12;           // Назначаем пин с кнопкой
+int ledPin = 13;              // Назначаем пин со светодиодом
+boolean buttonState = LOW;    // Состояние кнопки отжата
+
+void setup()
+{
+  pinMode(buttonPin, INPUT); // Задаем пин с кнопкой как вход,
+  pinMode(ledPin, OUTPUT);   // а пин со светодиодом - как выход
+}
+
+void loop()
+{
+  // Считываем значение кнопки
+  buttonState = digitalRead(buttonPin);
+  if (buttonState == HIGH)       // Если кнопка нажата
+  {
+    digitalWrite(ledPin, HIGH);  // Включаем светодиод
+  }
+  else                           // Иначе
+  {
+    digitalWrite(ledPin, LOW);   // Выключаем светодиод
+  }
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Теперь нажми и удерживай кнопку. Если ты все делал по указаниям, то при нажатии на кнопку светодиод должен загораться, а при отпускании кнопки - гаснуть.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Когда ты нажимаешь на кнопку, ты замыкаешь цепь и электрический ток поступает на пин D12, в дальнейшем наша программа обрабатывает этот сигнал и подает высокий уровень напряжения на пин D13, к которому подключен светодиод.</p>
+</div>
+<div class="paragraph">
+<p>Давай рассмотрим нашу программу подробнее.</p>
+</div>
+<div class="paragraph">
+<p>Часть функций ты видел в <a href="#Урок 1. Знакомство со светодиодом">уроке 1</a></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>int buttonPin = 12;           // Назначаем пин с кнопкой</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Данной строчкой мы создаем глобальную переменную с именем <strong>buttonPin</strong>, типа <strong>int</strong> (integer - целый тип данных) и присваиваем ей значение <strong>12</strong>.
+Имя переменной может быть любым, но понятным для тебя. Значение должно соответствовать пину, который ты выбрал, а тип переменной мы выбрали целый по причине того, что пины на плате обозначаются целыми числами (12, 13, 14 и тп.), а не дробными (0,5, 0,8 и тп.).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+В программе каждая переменная имеет имя, тип данных и значение.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<strong>Глобальные переменные</strong> - это переменные, которые доступны всей программе, включая подпрограммы (пользовательские функции). <strong>Локальные переменные</strong> - переменные, определенные внутри подпрограммы (пользовательской функции). Они доступны только внутри функции, в которой они определены.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>boolean buttonState = LOW;    // Состояние кнопки отжата</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Переменная <strong>buttonState</strong> необходима нам для того, чтобы отследить состояние нашей кнопки. У нее может быть 2 состояния: нажата и отжата.
+Поэтому мы создаем переменную типа <strong>boolean</strong> c начальным значением <strong>LOW</strong> (в ходе программы это значение будет изменяться).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>boolean</strong> - тип данных, принимающий всего два возможных значения (true (истина) или false (ложь); 1 или 0; LOW (низкий уровень напряжения) или HIGH (высокий уровень напряжения))</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>pinMode(buttonPin, INPUT); // Задаем пин с кнопкой как вход</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pinMode()</strong> - это процедура, которая устанавливает определенный пин в соответствующий режим;</p>
+</li>
+<li>
+<p><strong>buttonPin</strong> - имя пина, к которому подключен светодиод. В <a href="#Урок 1. Знакомство со светодиодом">уроке 1</a> мы не задавали имя пину, а писали просто номер пина. Правильнее задавать имя для всех переменных;</p>
+</li>
+<li>
+<p><strong>INPUT</strong> - режим, в который мы устанавливаем наш пин. В нашем случае пин определен как <strong>вход</strong>. Это значит что информационный сигнал будет передаваться из вне на этот пин;</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>buttonState = digitalRead(buttonPin);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>С помощью функции <strong>digitalRead()</strong>, программа считывает значение с переменной <strong>buttonPin</strong> и присваивает его нашей переменной <strong>buttonState</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>digitalRead()</strong> - функция, считывающая значение с указанного пина. Возвращает либо LOW, либо HIGH;</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if (buttonState == HIGH)       // Если кнопка нажата
+{
+  digitalWrite(ledPin, HIGH);  // Включаем светодиод
+}
+else                           // Иначе
+{
+  digitalWrite(ledPin, LOW);   // Выключаем светодиод
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В данном месте программы мы проверяем состояние кнопки: нажата или нет. Используем при этом конструкцию <strong>if, else</strong></p>
+</div>
+<div class="paragraph">
+<p>Молодец, теперь ты знаешь как с помощью кнопки замыкать и размыкать электрическую цепь.
+Вместо светодиода могут быть подсоединены и другие устройства, например пищалка (пьезоэлемент).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Поправь программу так, чтобы при опущенной кнопке светодиод горел, а при нажатой нет.</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы при опущенной кнопке светодиод горел, а при нажатой мигал с периодичностью в 1 секунду.
+(Смотри <a href="#Урок 1. Знакомство со светодиодом">урок 1</a>).</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы при нажатии на кнопку светодиод мигал, а при
+отпущенной кнопке нет.</p>
+</li>
+<li>
+<p>Подсоедини в схему вместо светодиода пищалку (пьезоэлемент).
+Что произошло?</p>
+</li>
+</ol>
+</div>
+</div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ananke" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://www.andreevclub.me/" >
+    &copy; 2018 Andreev blog
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Andreev blog  | Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.ab4b67a3ea25990fa8279f3b7ef08b61.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт" />
+<meta property="og:description" content="В ходе данной работы ты научишься передавать сигналы с компьютера на робота и наоборот через проводной последовательный порт.
+ Это может потребоваться при управлении роботом с помощью клавиатуры, мыши или смартфона.
+   Tip  Последовательный порт (COM-порт, Serial Port) – это стандартный двунаправленный последовательный порт компьютера, используется для передачи данных согласно протоколу RS-232 и не только.       Tip  Протокол передачи данных — стандарт, описывающий правила взаимодействия функциональных блоков при передаче данных." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.andreevclub.me/posts/manual/lesson4/" />
+
+
+
+<meta property="article:published_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+<meta property="article:modified_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт">
+<meta itemprop="description" content="В ходе данной работы ты научишься передавать сигналы с компьютера на робота и наоборот через проводной последовательный порт.
+ Это может потребоваться при управлении роботом с помощью клавиатуры, мыши или смартфона.
+   Tip  Последовательный порт (COM-порт, Serial Port) – это стандартный двунаправленный последовательный порт компьютера, используется для передачи данных согласно протоколу RS-232 и не только.       Tip  Протокол передачи данных — стандарт, описывающий правила взаимодействия функциональных блоков при передаче данных.">
+
+
+<meta itemprop="datePublished" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="dateModified" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="wordCount" content="1289">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт"/>
+<meta name="twitter:description" content="В ходе данной работы ты научишься передавать сигналы с компьютера на робота и наоборот через проводной последовательный порт.
+ Это может потребоваться при управлении роботом с помощью клавиатуры, мыши или смартфона.
+   Tip  Последовательный порт (COM-порт, Serial Port) – это стандартный двунаправленный последовательный порт компьютера, используется для передачи данных согласно протоколу RS-232 и не только.       Tip  Протокол передачи данных — стандарт, описывающий правила взаимодействия функциональных блоков при передаче данных."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://www.andreevclub.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andreev blog
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  <article class="flex-l flex-wrap justify-between mw8 center">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-06-08T11:34:59&#43;03:00">June 8, 2018</time>
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>В ходе данной работы ты научишься передавать сигналы с компьютера на робота и
+наоборот через проводной последовательный порт.</p>
+</div>
+<div class="paragraph">
+<p>Это может потребоваться при управлении роботом с помощью клавиатуры, мыши или смартфона.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<strong>Последовательный порт (COM-порт, Serial Port</strong>)
+ – это стандартный двунаправленный последовательный порт компьютера,
+ используется для передачи данных согласно <strong>протоколу RS-232</strong> и не только.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<strong>Протокол передачи данных</strong> — стандарт, описывающий правила взаимодействия
+функциональных блоков при передаче данных.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>То есть протокол - набор правил, по которым будут общаться устройства.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<strong>RS-232 (Recommended Standard 232)</strong> – это протокол
+последовательной передачи данных между двумя устройствами
+(информация передается пакетами по одному байту). Согласно данному протоколу,
+информация передается у виде двоичного кода: логическому нулю соответствует
+значение напряжение со знаком “+”, а логической единице соответствует
+значение напряжения со знаком “–“.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи Arduino Nano на кросс-плату.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.1.comPrintln.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 1. Установка Nano в кросс-плату</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код.
+Поскольку общение будет происходить через порт, важно <strong>не отсоединять</strong> провод от платы.</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Общение с компьютером через последовательный порт
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+
+  // Отправляем по последовательному порту
+  // сообщение "Hello"
+  Serial.println("Hello");
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    byte b = Serial.read();
+    // Отправлем ответную информацию на компьютер
+    Serial.write(b);
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Описание функций программного кода:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Про функции <strong>setup()</strong> и <strong>loop()</strong> ты знаешь из <a href="#Урок 1. Знакомство со светодиодом">урока 1</a>;</p>
+</li>
+<li>
+<p>Оператор <strong>if</strong> тебе известен из <a href="#Урок 2. Знакомство с кнопкой">урока 2</a>;</p>
+</li>
+<li>
+<p><strong>Serial</strong> -это встроенный объект, экземпляр класса. Предназначен для работы с последовательным портом, который содержит методы
+<strong>write</strong>, <strong>read</strong>, <strong>begin</strong>, <strong>println</strong> и др;</p>
+</li>
+<li>
+<p><strong>begin()</strong> - это метод, который открывает порт для передачи данных. В этот метод передается скорость передачи, на которой будет происходить общение, в бодах (бит/секунду).
+В нашем коде скорость передачи равна 9600 бод.</p>
+</li>
+<li>
+<p><strong>available()</strong> -  метод, возвращающий целое число байт, которое микроконтроллер еще не прочитал;
+Если это значение равно нулю, то это значит, что никаких данных через последовательный порт не приходило;</p>
+</li>
+<li>
+<p><strong>read()</strong> - метод, который считывает пришедшую информацию с компьютера (пришедший байт);</p>
+</li>
+<li>
+<p><strong>print()</strong> - метод, позволяющий печатать через последовательный порт текстовую информацию, переданную в качестве аргумента.
+Также есть функция <strong>println()</strong>, которая добавляет после нашего текста символ переноса на новую строчку.
+Таким образом каждая новая информация в мониторе порта будет располагаться с новой строчки (столбиком), а у метода <strong>print()</strong> вся информация будет располагаться в строчку.</p>
+</li>
+<li>
+<p><strong>write()</strong> - метод, передает информационный байт в монитор порта. То есть  <strong>print()</strong> печатает строчку значения аргумента, а <strong>write()</strong> передает значение этого аргумента.</p>
+</li>
+<li>
+<p><strong>byte b</strong> - переменная с именем b и типом данных <strong>byte</strong>. Byte - тип данных данных, содержащий 8-ми битное беззнаковое целое число, в диапазоне 0..255.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Открой Arduino IDE и зайди в:</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Сервис &#8658; Монитор порта</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Перед тобой откроется диалоговое окно для передачи символов через последовательный порт.
+Робот будет приветствовать тебя фразой 'Hello', что в переводе с Английского значит 'Привет'.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.1.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 2. Монитор порта. Приветствие</div>
+</div>
+</li>
+<li>
+<p>Поставь курсор мыши в поле ввода, напиши любой текст и нажми <strong>отправить</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.2.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 3. Монитор порта. Ввод текста</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.2.3.monitorPort.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 4. Монитор порта. Вывод введенного текста</div>
+</div>
+<div class="paragraph">
+<p>После того, как ты нажал отправить, текст через последовательный порт
+передался на контроллер, контроллер его обработал и отправил в монитор порта абсолютно такой же текст.
+Таким вот простым образом можно производить передачу данных с компьютера на контроллер и наоборот.</p>
+</div>
+</li>
+<li>
+<p>Теперь создадим диалог между тобой и контроллером робота.
+Смысл диалога состоит в том, что ты будешь писать роботу вопросы, а он будет тебе на них отвечать.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+В данном задании важно задавать вопросы в точности также, как мы их опишем в программе, учитывая все знаки препинания
+и заглавные буквы!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Вопросы можешь придумать свои, а можешь использовать те, что мы приготовили:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Привет!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Привет!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Как тебя зовут?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Меня зовут Робас.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сколько тебе лет?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 года.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ты:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Расскажи законы робототехники</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Контроллер:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Существует три основных закона робототехники. Их автор Айзек Азимов.
+</p><p class="tableblock">              1.Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.
+</p><p class="tableblock">              2.Робот должен повиноваться всем приказам, которые дает человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.
+</p><p class="tableblock">              3.Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="literalblock">
+<div class="content">
+<pre>// Диалог через последовательный порт
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    byte b = Serial.read();
+    if (b == "Привет!")
+    {
+        Serial.println("Привет");
+    }
+    if (b == "Как тебя зовут?")
+    {
+        Serial.println("Меня зовут Робас");
+    }
+    if (b == "Сколько тебе лет?")
+    {
+        Serial.println("3 года");
+    }
+    if (b == "Расскажи законы робототехники")
+    {
+        Serial.println("Существует три основных закона робототехники. Их автор Айзек Азимов.");
+        Serial.println("1.Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.");
+        Serial.println("2.Робот должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.");
+        Serial.println("3.Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.");
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Теперь, с помощью монитор порта задавай вопросы роботу, а он тебе на них будет отвечать!</p>
+</div>
+</li>
+<li>
+<p>С помощью команд, посылаемых с компьютера через последовательный порт
+можно управлять датчиками и сенсорами, подключенными к контроллеру. Попробуй
+управлять светодиодом и пьезопищалкой, используя клавиатуру компьютера:</p>
+<div class="paragraph">
+<p>Собери схему, которая представлена на картинке:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/4.3.onOff.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 5. Схема подключения светодиодов-мигалок и пьезопищалки</div>
+</div>
+<div class="paragraph">
+<p>В этой схеме мы подключаем к контроллеру 2 светодиода, из которых мы в последствии сделаем мигалку
+Плюс синего светодиода подключаем к пину <strong>D2</strong> контроллера, плюс красного светодиода подключаем к пину <strong>D3</strong> контроллера,
+Плюс пьезопищалки подключим к пину <strong>D13</strong>.
+Минусы элементов подключим к дополнительной минусовой колодке.</p>
+</div>
+<div class="paragraph">
+<p>Загрузи код:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Управление через последовательный порт
+
+int blueLed = 2;                   // Пин с синим светодиодом
+int redLed = 3;                    // Пин с красным светодиодом
+int piezo = 13;                    // Пин с пищалкой
+
+void setup()
+{
+  // Определяем последовательный порт
+  // Задаем скорость передачи данных 9600 бод
+  Serial.begin(9600);
+  Serial.println("Press comand..."); // Выводим фразу "Введите команду" при открытии монитор порта
+
+  pinMode(blueLed, OUTPUT);        // Задаем пин как выход
+  pinMode(redLed, OUTPUT);         // Задаем пин как выход
+  pinMode(piezo, OUTPUT);          // Задаем пин как выход
+}
+
+void loop()
+{
+  // Проверка, пришла ли какая-нибудь
+  // информация с компьютера
+  if (Serial.available() &gt; 0)
+  {
+    // Пришла. Считываем ее в переменную b
+    char b = Serial.read();         // Если пришел символ 'r'
+    if (b == 'r')
+    {
+        digitalWrite(redLed, HIGH); // Включаем красный светодиод
+        Serial.println("Red on");   // Выводим текст в монитор порта. "Красный включен"
+    }
+     if (b == 'b')                  // Если пришел символ 'b'
+    {
+        digitalWrite(blueLed, HIGH);// Включаем синий светодиод
+        Serial.println("Blue on");  // Выводим текст в монитор порта. "Синий включен"
+    }
+    if (b == 'p')                   // Если пришел символ 'p'
+    {
+        digitalWrite(piezo, HIGH);  // Включаем пищалку
+        Serial.println("Piezo on"); // Выводим текст в монитор порта. "Пищалка включена"
+    }
+    if (b == '0')                   // Если пришел символ '0'
+    {
+        digitalWrite(blueLed, LOW); // Выключаем синий светодиод
+        digitalWrite(redLed, LOW);  // Выключаем красный светодиод
+        digitalWrite(piezo, LOW);   // Выключаем пищалку
+        Serial.println("All off");  // Выводим текст в монитор порта: "Все выключено"
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Программа работает так, что при нажатии на определенные символы на клавиатуре,
+ты можешь управлять статусом светодиодов и пищалки. Таблица символов представлена ниже.
+Можешь выбрать и свои символы, не забудь только поправить код.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Символ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Действие</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'r'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red on - включение красного светодиода</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'b'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blue on - включение синего светодиода</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'p'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Piezo on - включение пищалки</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'0'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All off - выключить все</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Молодец, ты узнал что такое последовательный порт и научился, с его помощью, управлять контроллером.
+А теперь попробуй выполнить задания.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Поменяй символы управления светодиодами и пищалкой по своему усмотрению.</p>
+</li>
+<li>
+<p>Поправь последнюю программу так, чтобы при отправки одного символа с клавиатуры оба светодиода и пищалка
+включались одновременно, а при другом символе все отключалось.</p>
+</li>
+<li>
+<p>Поправь программу так, чтобы каждый светодиод и пищалка отключались
+при нажатии на разные кнопки, а не одновременно.</p>
+</li>
+</ol>
+</div>
+</div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ananke" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://www.andreevclub.me/" >
+    &copy; 2018 Andreev blog
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

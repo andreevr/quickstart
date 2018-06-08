@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Andreev blog  | Урок 5. Ультразвуковой дальномер. Определяем расстояние</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.ab4b67a3ea25990fa8279f3b7ef08b61.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Урок 5. Ультразвуковой дальномер. Определяем расстояние" />
+<meta property="og:description" content="В данном уроке ты узнаешь что такое ультразвуковой дальномер, как он устроен и, с его помощью, сможешь определять расстояния до объекта. В нашем роботе используется дальномер HC-SR04. С этим устройством можно запрограммировать мобильного робота, чтобы он объезжал препятствия, или рассчитывал расстояние до предметов, или двигался в сторону/от стены.
+   Note  Ультразвуковой дальномер - это устройство для бесконтактного измерения расстояния      Figure 1. Ультразвуковой дальномер HC-SR04  Принцип работы Ультразвуковой дальномер посылает через передатчик импульсный сигнал определенной частоты (в нашем случае 40 кГц) и слушает эхо через приемник." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.andreevclub.me/posts/manual/lesson5/" />
+
+
+
+<meta property="article:published_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+<meta property="article:modified_time" content="2018-06-08T11:34:59&#43;03:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Урок 5. Ультразвуковой дальномер. Определяем расстояние">
+<meta itemprop="description" content="В данном уроке ты узнаешь что такое ультразвуковой дальномер, как он устроен и, с его помощью, сможешь определять расстояния до объекта. В нашем роботе используется дальномер HC-SR04. С этим устройством можно запрограммировать мобильного робота, чтобы он объезжал препятствия, или рассчитывал расстояние до предметов, или двигался в сторону/от стены.
+   Note  Ультразвуковой дальномер - это устройство для бесконтактного измерения расстояния      Figure 1. Ультразвуковой дальномер HC-SR04  Принцип работы Ультразвуковой дальномер посылает через передатчик импульсный сигнал определенной частоты (в нашем случае 40 кГц) и слушает эхо через приемник.">
+
+
+<meta itemprop="datePublished" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="dateModified" content="2018-06-08T11:34:59&#43;03:00" />
+<meta itemprop="wordCount" content="977">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Урок 5. Ультразвуковой дальномер. Определяем расстояние"/>
+<meta name="twitter:description" content="В данном уроке ты узнаешь что такое ультразвуковой дальномер, как он устроен и, с его помощью, сможешь определять расстояния до объекта. В нашем роботе используется дальномер HC-SR04. С этим устройством можно запрограммировать мобильного робота, чтобы он объезжал препятствия, или рассчитывал расстояние до предметов, или двигался в сторону/от стены.
+   Note  Ультразвуковой дальномер - это устройство для бесконтактного измерения расстояния      Figure 1. Ультразвуковой дальномер HC-SR04  Принцип работы Ультразвуковой дальномер посылает через передатчик импульсный сигнал определенной частоты (в нашем случае 40 кГц) и слушает эхо через приемник."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://www.andreevclub.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andreev blog
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  <article class="flex-l flex-wrap justify-between mw8 center">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Урок 5. Ультразвуковой дальномер. Определяем расстояние</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2018-06-08T11:34:59&#43;03:00">June 8, 2018</time>
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>В данном уроке ты узнаешь что такое ультразвуковой дальномер, как он устроен и,
+с его помощью, сможешь определять расстояния до объекта. В нашем роботе
+используется дальномер HC-SR04.
+С этим устройством можно запрограммировать мобильного робота, чтобы он объезжал препятствия, или
+рассчитывал расстояние до предметов, или двигался в сторону/от стены.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Ультразвуковой дальномер - это устройство для бесконтактного
+измерения расстояния
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.1.1.hcsr04.jpg" alt="350" width="350">
+</div>
+<div class="title">Figure 1. Ультразвуковой дальномер HC-SR04</div>
+</div>
+<div class="sect2">
+<h3 id="_Принцип_работы">Принцип работы</h3>
+<div class="paragraph">
+<p>Ультразвуковой дальномер посылает через передатчик импульсный сигнал определенной частоты (в нашем случае 40 кГц)
+и слушает эхо через приемник. Отправленный сигнал встречается с объектом, отражается от него и попадает обратно в дальномер.
+Дальномер измеряет время путешествия сигнала.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.2.URFanimation.gif" alt="350" width="350">
+</div>
+<div class="title">Figure 2. Принцип работы УЗ дальномера</div>
+</div>
+<div class="paragraph">
+<p>По времени распространения звуковой волны можно оценить расстояние до объекта, используя формулу:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>s = (t<sub>и</sub> × с) / 2</p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s - расстояние до объекта;</p>
+</li>
+<li>
+<p>t<sub>и</sub> - время отправленного сигнала;</p>
+</li>
+<li>
+<p>с - скорость звука (343 м/с).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Почему мы наше выражение делим пополам? Все дело в том, что сигнал проходит 2 расстояния:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>От передатчика до препятствия;</p>
+</li>
+<li>
+<p>От препятствия до приемника.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Эти расстояния одинаковые (дальномер то у нас один).
+Чтобы узнать точное расстояние до объекта необходимо общий путь следования сигнала поделить пополам.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Скорость звука равна 343 м/с или 1234,8 км/ч.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Характеристики_УЗ_дальномера_hc_sr04">Характеристики УЗ дальномера HC-SR04</h3>
+<div class="paragraph">
+<p>Данное устройство имеет 4 контактных ножки:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vcc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Питание (+)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Цифровой вход</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Echo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Цифровой выход</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gnd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Земля (-)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Подаем логическую единицу (высокий уровень напряжения) на цифровой вход <strong>Trig</strong>.
+После завершения измерения, на цифровой выход <strong>Echo</strong> будет подана логическая единица на время, пропорциональное расстоянию до объекта.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Напряжение питания</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 В</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Потребляемый ток при работе</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 мА</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Рабочая частота сигнала</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 кГц</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Рабочий диапазон</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 - 400 см</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Угол измерения</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15°</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Габариты</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45х20х15 мм</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_Ход_работы">Ход работы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установи контроллер и ультразвуковой дальномер на кросс-плату.</p>
+</li>
+<li>
+<p>Подключи ультразвуковой дальномер к контроллеру по рисунку.
+Поскольку "плюс" (<strong>Vcc</strong>) и "минус" (<strong>Gnd</strong>) уже разведены в дорожках кросс-платы, тебе остается
+подключить 2 контакта: Цифровой выход <strong>Echo</strong> подключи к пину <strong>A1</strong> контроллера, а цифровой вход <strong>Trig</strong> - к пину <strong>A0</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.3.URFinger.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 3. Схема подключения УЗ дальномера</div>
+</div>
+</li>
+<li>
+<p>Подключи устройство к компьютеру через последовательный порт и загрузи на него код. Поскольку общение будет происходить через порт, важно не отсоединять провод от платы.
+Данный код позволит контроллеру определять расстояние между дальномером и объектом:</p>
+<div class="literalblock">
+<div class="content">
+<pre>// Ультразвуковой дальномер и расстояние до препятствия через последовательный порт
+
+int echoPin = A1;                    // Назначаем пин A1. Сигнал с выхода дальномера
+int trigPin = A0;                    // Назначаем пин A0. Сигнал с входа дальномера
+
+void setup()
+{
+  // Определяем СОМ-порт
+  // Задаем ему скорость 9600 бод
+  Serial.begin(9600);
+  pinMode(echoPin, INPUT);           // Задаем пин как вход
+  pinMode(trigPin, OUTPUT);          // Задаем пин как выход
+}
+
+void loop()
+{
+  int t;                            // Время прохождения сигнала от приемника до передатчика
+  int s;                            // Дальность до препятствия
+
+  digitalWrite(trigPin, HIGH);       // Подаем сигнал на дальномер
+  delayMicroseconds(10);             // Удерживаем 10 микросекунд
+  digitalWrite(trigPin, LOW);        // Отмена подачи сигнала на дальномер
+  t = pulseIn(echoPin, HIGH);        // Замеряем длину импульса
+  s = t / 58;                        // Находим расстояние до препятствия по формуле s = c*t в см
+
+  Serial.print(s);                  // Отправляем на компьютер значение
+  Serial.println(" cm");             // Печатаем единицы измерения в см
+  delay(100);
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Данный программный код будет работать так:
+С контроллера, через пин <strong>A1</strong> мы подаем сигнал длительностью 10 мкс на вход УЗ дальномера <strong>Trig</strong>.
+С помощью встроенной функции <strong>pulseIn()</strong>, считываем продолжительность следования сигнала,
+используя выход <strong>Echo</strong> УЗ дальномера, который подключен к пину <strong>А0</strong> контроллера.
+После этого находим расстояние до препятствия с помощью формулы <strong>s = t / 58</strong>
+и печатаем полученное значение и единицы измерения в монитор порта через последовательный порт.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Формула <strong>s = t / 58</strong> получилась из формулы <strong>s = (t<sub>и</sub> × с) / 2</strong>
+при переводе скорости звука из метров/секунду в сантиметры/микросекунду.</p>
+</div>
+<div class="paragraph">
+<p>Скорость звука c = 343 м/с = 0,0343 см/мкс ≈ 1/29 см/мкс.</p>
+</div>
+<div class="paragraph">
+<p>Получаем:</p>
+</div>
+<div class="paragraph">
+<p>s = (t * c) / 2;</p>
+</div>
+<div class="paragraph">
+<p>s = (t * (1/29)) / 2;</p>
+</div>
+<div class="paragraph">
+<p>s = t * 1 / 58;</p>
+</div>
+<div class="paragraph">
+<p>s = t / 58 - формула для нахождения расстояния до объекта в сантиметрах.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Описание функций программного кода:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Про функции <strong>setup()</strong> и <strong>loop()</strong> ты знаешь из <a href="#Урок 1. Знакомство со светодиодом">урока 1</a>;</p>
+</li>
+<li>
+<p><strong>Serial</strong> -это встроенный объект, экземпляр класса. Предназначен для работы с последовательным портом, который содержит методы
+<strong>write</strong>, <strong>read</strong>, <strong>begin</strong>, <strong>println</strong>, смотри <a href="#Урок 4. Передача информации с мобильного робота на компьютер через последовательный порт">урок 4</a>;</p>
+</li>
+<li>
+<p><strong>digitalWrite()</strong> - это функция, которая подает определенный уровень напряжения на цифровой пин. Либо LOW - низкий, либо HIGH - высокий.
+(В нашем случае используются <strong>аналоговые</strong> пины <strong>A1</strong> и <strong>A0</strong>. Аналоговые пины могут выполнять роль цифровых пинов);</p>
+</li>
+<li>
+<p><strong>delayMicroseconds()</strong> - Приостанавливает программу на время (в микросекундах), указанное в качестве параметра.
+Для задержек, превышающих несколько тысяч микросекунд, используй <strong>delay()</strong>;</p>
+</li>
+<li>
+<p><strong>pulseIn(echoPin, HIGH)</strong> - Считывает длительность сигнала на заданном порту (HIGH или LOW).
+Например, если задано считывание HIGH функцией pulseIn(),
+функция ожидает пока на заданном порту не появиться HIGH.
+Когда HIGH получен, включается таймер, который будет остановлен когда на порту вход/выхода будет LOW.
+Функция pulseIn() возвращает длину сигнала в микросекундах. Функция возвращает 0, если в течение заданного времени (таймаута) не был зафиксирован сигнал на порту.
+Возможны некоторые погрешности в измерение длинных сигналов. Функция может измерять сигналы длиной от 10 микросекунд до 3 минут.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Аналоговый пин контроллера может играть роль цифрового.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Цифровой пин контроллера <strong>не</strong> сможет заменить аналогового.
+<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Открой Arduino IDE и зайди в:</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Сервис &#8658; Монитор порта</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Контроллер через последовательный порт будет выдавать тебе расстояние до объекта в сантиметрах.
+В моем случае расстояние до объекта равнялось 7 см.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.4.2.URFCOM.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 4. Монитор порта выдает расстояние до объекта</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pictures/5.4.1.URFrobot.jpg" alt="700" width="700">
+</div>
+<div class="title">Figure 5. Робот и возникшее перед ним препятствие</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>В этом уроке ты узнал, что такое ультразвуковой дальномер и как он работает.
+Теперь ты можешь применить данное устройство в других задачах.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_Задания">Задания</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Создай программу, которая будет включать светодиод при следующем условии:
+если расстояние до объекта меньше 10 см, включить светодиод, иначе выключить.</p>
+</li>
+<li>
+<p>Реализуй парктроник с помощью дальномера и пищалки.
+При приближении к препятствию пищалка должна пищать чаще, при отдалении - реже, а
+при большом расстоянии - не подавать никаких сигналов. Не забудь подключить пищалку,
+в этом тебе поможет Урок 3.
+(Парктроник - это устройство, которое сигнализирует о приближении к препятствию.
+Устанавливается на автомобили для удобства парковки).</p>
+</li>
+</ol>
+</div>
+</div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ananke" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://www.andreevclub.me/" >
+    &copy; 2018 Andreev blog
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
